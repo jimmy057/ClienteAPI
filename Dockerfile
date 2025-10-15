@@ -7,7 +7,7 @@ EXPOSE 443
 # Etapa 2: Imagen para construir el proyecto
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["ClienteApi.csproj", "./"]
+COPY ["ClienteApI.csproj", "./"]
 RUN dotnet restore "./ClienteApI.csproj"
 COPY . .
 RUN dotnet publish "ClienteApI.csproj" -c Release -o /app/publish
