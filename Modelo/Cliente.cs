@@ -6,21 +6,21 @@ namespace ClienteAPI.Modelo
 	public class Cliente
 	{
 		[Key]
-		public int Id { get; set; }
+		public required int Id { get; set; }
 
 		[Column(TypeName = "text")]
-		public string Nombre { get; set; }
+		public required string Nombre { get; set; }
 
 		[Column(TypeName = "text")]
-		public string Apellido { get; set; }
+		public required string Apellido { get; set; }
 
 		[Column(TypeName = "text")]
-		public string Email { get; set; }
+		public required string Email { get; set; }
 
 		[Column(TypeName = "text")]
-		public string Telefono { get; set; }
+		public required string Telefono { get; set; }
 
 		[Column(TypeName = "text")]
-		public string Direccion { get; set; }
+		public required  string Direccion { get; set; }
 	}
 }
