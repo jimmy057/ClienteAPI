@@ -1,12 +1,26 @@
-﻿namespace ClienteAPI.Modelo
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace ClienteAPI.Modelo
 {
 	public class Cliente
 	{
-		public int Id { get; set; }             
-		public string Nombre { get; set; } = "";
-		public string Apellido { get; set; } = "";
-		public string Email { get; set; } = "";
-		public string Telefono { get; set; } = "";
-		public string Direccion { get; set; } = "";
+		[Key]
+		public int Id { get; set; }
+
+		[Column(TypeName = "text")]
+		public string Nombre { get; set; }
+
+		[Column(TypeName = "text")]
+		public string Apellido { get; set; }
+
+		[Column(TypeName = "text")]
+		public string Email { get; set; }
+
+		[Column(TypeName = "text")]
+		public string Telefono { get; set; }
+
+		[Column(TypeName = "text")]
+		public string Direccion { get; set; }
 	}
 }
