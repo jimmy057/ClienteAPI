@@ -8,13 +8,13 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY ["ClienteApi.csproj", "./"]
-RUN dotnet restore "./ClienteApi.csproj"
+RUN dotnet restore "./ClienteApI.csproj"
 COPY . .
-RUN dotnet publish "ClienteApi.csproj" -c Release -o /app/publish
+RUN dotnet publish "ClienteApI.csproj" -c Release -o /app/publish
 
 # Etapa 3: Imagen final
 FROM base AS final
 WORKDIR /app
 COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "ClienteApi.dll"]
+ENTRYPOINT ["dotnet", "ClienteApI.dll"]
 
