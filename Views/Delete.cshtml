@@ -1,0 +1,31 @@
+﻿@model ClienteAPI.Modelo.Cliente
+
+@{
+    ViewData["Title"] = "Eliminar Cliente";
+}
+
+<h1>Eliminar Cliente</h1>
+
+<p>¿Estás seguro de eliminar este cliente?</p>
+
+<div class="mb-3">
+    <strong>Nombre:</strong> @Model.Nombre
+</div>
+<div class="mb-3">
+    <strong>Apellido:</strong> @Model.Apellido
+</div>
+<div class="mb-3">
+    <strong>Email:</strong> @Model.Email
+</div>
+<div class="mb-3">
+    <strong>Teléfono:</strong> @Model.Telefono
+</div>
+<div class="mb-3">
+    <strong>Dirección:</strong> @Model.Direccion
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">🗑️ Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

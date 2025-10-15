@@ -1,0 +1,27 @@
+﻿@model ClienteAPI.Modelo.Cliente
+
+@{
+    ViewData["Title"] = "Detalles del Cliente";
+}
+
+<h1>Detalles del Cliente</h1>
+
+<div class="mb-3">
+    <strong>Nombre:</strong> @Model.Nombre
+</div>
+<div class="mb-3">
+    <strong>Apellido:</strong> @Model.Apellido
+</div>
+<div class="mb-3">
+    <strong>Email:</strong> @Model.Email
+</div>
+<div class="mb-3">
+    <strong>Teléfono:</strong> @Model.Telefono
+</div>
+<div class="mb-3">
+    <strong>Dirección:</strong> @Model.Direccion
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">✏️ Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Volver</a>
+
