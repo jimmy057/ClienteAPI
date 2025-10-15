@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: ClienteAPI
+    runtime: docker
+    plan: free
+    branch: main
+    buildCommand: "dotnet build"
+    startCommand: "dotnet ClienteAPI.dll"
+    envVars:
+      - key: DOTNET_RUNNING_IN_CONTAINER
+        value: "true"
+      - key: ASPNETCORE_ENVIRONMENT
+        value: "Production"
+      - key: ConnectionStrings__DefaultConnection
+        value: "Host=<DB_HOST>;Database=<DB_NAME>;Username=<DB_USER>;Password=<DB_PASSWORD>;Port=5432;"
